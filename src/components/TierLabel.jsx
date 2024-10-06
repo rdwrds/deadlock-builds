@@ -1,6 +1,6 @@
 const TierLabel = () => {
   return (
-    <div class="tier-label"></div>
+    <div className="tier-label"></div>
   )
 }
 export default TierLabel

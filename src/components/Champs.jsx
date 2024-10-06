@@ -1,11 +1,11 @@
 const Champs = () => {
   return (
-    <div class="champs">
-      <div class="champ"></div>
-      <div class="champ"></div>
-      <div class="champ"></div>
-      <div class="champ"></div>
-      <div class="champ"></div>
+    <div className="champs">
+      <div className="champ"></div>
+      <div className="champ"></div>
+      <div className="champ"></div>
+      <div className="champ"></div>
+      <div className="champ"></div>
     </div>
   );
 };

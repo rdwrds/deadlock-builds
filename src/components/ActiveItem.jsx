@@ -1,6 +1,6 @@
 const ActiveItem = () => {
   return (
-    <div class="active-item"></div>
+    <div className="active-item"></div>
   )
 }
 export default ActiveItem

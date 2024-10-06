@@ -1,10 +1,10 @@
 const ActiveSlots = () => {
   return (
-    <div class="active-slots">
-      <div class="active-item"></div>
-      <div class="active-item"></div>
-      <div class="active-item"></div>
-      <div class="active-item"></div>
+    <div className="active-slots">
+      <div className="active-item"></div>
+      <div className="active-item"></div>
+      <div className="active-item"></div>
+      <div className="active-item"></div>
     </div>
   );
 };

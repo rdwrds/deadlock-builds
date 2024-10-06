@@ -1,6 +1,6 @@
 const Inventory = () => {
   return (
-    <div class="inventory"></div>
+    <div className="inventory"></div>
   )
 }
 export default Inventory
