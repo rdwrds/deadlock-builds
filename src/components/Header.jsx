@@ -1,17 +1,14 @@
-import data from "../sorted_deadlock_items_condis.json"
+import {items} from "../sorted_deadlock_items_condis.js";
 
 const Header = () => {
   const handleButtonClick = () => {
-    const arr = Object.entries(data);
-    arr.map((key, value) => {
-      console.log(key[0]);
-    }) 
-   }
+    console.log(items.Weapon[1].Basic_Magazine)
+  };
 
   return (
-    <div class="header">
+    <div className="header">
       <button onClick={handleButtonClick}>data</button>
     </div>
-  )
-}
-export default Header
+  );
+};
+export default Header;
