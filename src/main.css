@@ -1,195 +1,237 @@
 :root {
-    --text-background: #f0e1cb;
-    --default-background: #28271e;
-    --tan-background: #ccbda7;
-    --grey-background: #525659;
-    --souls-color: #5b8880;
-    --weapon-color: #e09b2f;
-    --spirit-color: #ce91fe;
-    --vitality-color: #84b430;
+  --text-background: #f0e1cb;
+  --default-background: #28271e;
+  --tan-background: #ccbda7;
+  --grey-background: #525659;
+  --souls-color: #5b8880;
+  --weapon-color: #e09b2f;
+  --spirit-color: #ce91fe;
+  --vitality-color: #84b430;
+}
+
+@font-face {
+  font-family: "forevs";
+  src: url("../assets/fonts/ForevsVariable-Italic.woff2") format("woff2");
 }
 
 body {
-    margin: 0px;
-    background-color: rgba(0,0,0,.7);
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: "forevs", system-ui;
 }
 
 div {
-    border-radius: 2.5%;
-    box-shadow: 1px 1px 3px rgba(0,0,0,.8);
+  border-radius: 2.5%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.header
-{
-    height: 50px;
-    margin-bottom: 10px;
-    
+.header {
+  height: 50px;
+  margin-bottom: 10px;
 }
 
 .outer {
-    display: flex;
-    padding: 2vmax;
-    background-color: var(--default-background);
-    width: 80vw;
-    height: fit-content;
-    margin: auto;
+  display: flex;
+  padding: 2vmax;
+  background-color: var(--default-background);
+  width: 80vw;
+  height: fit-content;
+  margin: auto;
 }
 
 .item-tabs-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 0px;
-    width: 65%;
-    
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+  width: 65%;
 }
 
 .tabs {
-    height: 5%;
-    display: flex;
-    flex-direction: row;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
 }
 
-.tabs div {
-    width: 20%;
-    background-color: var(--tan-background);
-    margin-right: 0.75%;
+.tabs button {
+  width: 20%;
+  background-color: var(--tan-background);
+  border: none;
+  margin-right: 0.75%;
+  border-radius: 2.5%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.tabs button:hover {
+  cursor: pointer;
+  filter: brightness(75%);
 }
 
 .items {
-    background-color: var(--weapon-color);
-    display: grid;
-    grid-template-columns: 10% 1fr;
-    grid-template-rows: 25% 1fr 1fr 1fr;
-    border-radius: 0.5%;
-    height: 110%;
-    width: 100%;
-    margin: 0px auto;
-    padding: .25rem 0;
+  background-color: var(--weapon-color);
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  grid-template-rows: 25% 1fr 1fr 1fr;
+  border-radius: 0.5%;
+  height: 110%;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0.25rem 0;
 }
 
-.tier-label{
-    margin: 2px 0px 2px 10px;
-    border-radius: 0px;
-    box-shadow-right: none;
-    padding: auto;
+.tier-label {
+  margin: 2px 0px 2px 10px;
+  border-radius: 0px;
+  box-shadow-right: none;
+  padding: auto;
 }
 
 .tier-label > p {
-    position: relative;
-    text-align: center;
-    vertical-align: center;
-    transform: rotate(-90deg);
+  position: relative;
+  text-align: center;
+  vertical-align: center;
+  transform: rotate(-90deg);
 }
 
 .tier-grid {
-    position: relative;
-    margin: 2px;
-    margin-left: 0px;
-    display: grid;
-    padding: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 5px;
-    row-gap: 10px;
+  position: relative;
+  margin: 2px;
+  margin-left: 0px;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 10px;
 }
 
 .item {
-    position: relative;
-    background-color: var(--text-background);
+  position: relative;
+  background-color: var(--text-background);
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item > img {
+  display: block;
+  margin: auto;
+  height: 60%;
+  filter: brightness(15%);
 }
 
 .item > p {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    bottom: 0;
-    width: 100%;
-    height: 40%;
-    background: var(--weapon-color);
-}
-
-.hide {
-    display: none;
-    position: absolute;
-    z-index: 3;
-    left: 100%;
-    background-color: var(--weapon-color);
-    width: 15vw;
-    height: 15vw;
-    margin-left: 25%;
-    opacity: 0;
-    transition: opacity 1s;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--text-background);
+  text-align: center;
+  font-size: 0.55vw;
 }
 
 .item:hover > .hide {
-    display: inline-block;
-    opacity: 100%;
+  display: inline-block;
+  opacity: 100%;
+}
+
+.hide {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  left: 100%;
+  background-color: var(--weapon-color);
+  width: 15vw;
+  height: fit-content;
+  margin-left: 25%;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .hide-body {
-    background-color: #9d6d21;
-    position: absolute;
-    bottom: 0;
-    height: 75%;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
+  filter: brightness(75%);
+  position: relative;
+  height: 60%;
+  width: 100%;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.hide-body > section > p {
+  margin: 0;
+  font-size: 0.75vw;
 }
 
 .champs {
-    background-color: var(--grey-background); 
-    margin: auto;
-    margin-left: 1%;
-    padding: 10px;
-    height: 35vmax;
-    width: 30vmax;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 10px;
+  background-color: var(--grey-background);
+  margin: auto;
+  margin-left: 1%;
+  padding: 10px;
+  height: 35vmax;
+  width: 30vmax;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
 .champ {
-    background-color: var(--souls-color); 
-    z-index: 1;
+  background-color: var(--souls-color);
+  z-index: 1;
 }
 
 .inventory {
-    display: grid;
-    grid-template-columns: 15% 15% 15% 15% 1fr;
-    column-gap: 10px;
-    padding: 10px;
-    height: 7vmax;
-    width: 50vw;
-    margin: 1% auto;
-    background-color: var(--default-background);
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 1fr;
+  column-gap: 10px;
+  padding: 2%;
+  height: auto;
+  width: 70vw;
+  margin: 1% auto;
+  background-color: var(--default-background);
 }
 
 .default-inventory,
-.weapon-inventory, 
-.vitality-inventory, 
-.spirit-inventory, 
-.flex-inventory    {
-    background-color: grey;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 5px;
-    row-gap: 10px;
+.weapon-inventory,
+.vitality-inventory,
+.spirit-inventory,
+.flex-inventory {
+  background-color: grey;
+  padding: 5%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 4%;
+  row-gap: 3%;
 }
 
+.inventory img {
+  display: inline-block;
+  width: 50%;
+  margin: 10%;
+}
 
-.default-slots, .weapon-slots, .active-item {
-    background-color: var(--grey-background);
+.weapon-slots,
+.spirit-slots,
+.vitality-slots,
+.flex-slots,
+.active-item {
+  background-color: var(--grey-background);
+  display: flex; /* Ensures image can be centered */
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  width: 100%;
 }
 
 .active-slots {
-    background-color: grey;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
-    padding: 10% 10px;
+  background-color: grey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  padding: 10% 10px;
 }
-
