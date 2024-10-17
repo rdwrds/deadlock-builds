@@ -53,10 +53,10 @@ export const items = {
         "Activation": "Passive",
         "Slot": "weapon",
         "Cooldown": "0",
-        "spiritPower": "4",
+        "TechPower": "4",
         "LifeThreshold": "60",
         "Conditionals": { "BaseAttackDamagePercent": "22" },
-        "spiritShieldMaxHealth": "85"
+        "TechShieldMaxHealth": "85"
       },
       "Restorative_Shot": {
         "Description": "Your next bullet will heal you based on what target you hit.",
@@ -135,7 +135,7 @@ export const items = {
         "Cooldown": "0",
         "BonusFireRate": "22",
         "BonusClipSizePercent": "10",
-        "LocalBulletvitalityReduction": "-5"
+        "LocalBulletArmorReduction": "-5"
       },
       "Mystic_Shot": {
         "Description": "Your next bullet deals bonus Spirit Damage.",
@@ -216,7 +216,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "weapon",
         "Cooldown": "0",
-        "spiritPower": "5",
+        "TechPower": "5",
         "Conditionals": { "SlowPercent": "25", "SlowDuration": "1.3" },
         "BaseAttackDamagePercent": "16"
       },
@@ -229,7 +229,7 @@ export const items = {
         "Cooldown": "0",
         "BaseAttackDamagePercent": "7",
         "Conditionals": {
-          "ShreddersspiritAmp": "10",
+          "ShreddersTechAmp": "10",
           "DebuffDuration": "6",
           "LifestealPercentHero": "20"
         }
@@ -246,7 +246,7 @@ export const items = {
         "BonusHealth": "150",
         "Conditionals": {
           "Radius": "15m",
-          "BulletvitalityReduction": "-9",
+          "BulletArmorReduction": "-9",
           "FireRateSlow": "10"
         },
         "SingleTargetPlayerMultiplier": "3"
@@ -359,13 +359,13 @@ export const items = {
         "Activation": "Passive",
         "Slot": "weapon",
         "Cooldown": "0",
-        "spiritPower": "12",
+        "TechPower": "12",
         "BaseAttackDamagePercent": "25",
         "Conditionals": {
           "BaseAttackDamagePercentBonus": "25",
           "EnemyLifeThreshold": "50"
         },
-        "spiritResist": "12"
+        "TechResist": "12"
       },
       "Escalating_Resilience": {
         "Description": "Grants Bullet Resist when your bullets hit an enemy hero. Each shot can only grant one stack.",
@@ -375,7 +375,7 @@ export const items = {
         "Slot": "weapon",
         "Cooldown": "0",
         "Conditionals": {
-          "MaxvitalityStacks": "40",
+          "MaxArmorStacks": "40",
           "BulletResistPerStack": "2",
           "BulletResistDuration": "20"
         },
@@ -408,7 +408,7 @@ export const items = {
         "Cooldown": 28,
         "Duration": "5",
         "CastRange": "0",
-        "spiritPower": "11",
+        "TechPower": "11",
         "Conditionals": {
           "DPS": "45",
           "DPSIncrease": "8",
@@ -459,7 +459,7 @@ export const items = {
         "Activation": "InstantCast",
         "Slot": "weapon",
         "Cooldown": 16,
-        "spiritPower": "8",
+        "TechPower": "8",
         "BaseAttackDamagePercent": "20",
         "Conditionals": {
           "BulletResist": "30",
@@ -515,7 +515,7 @@ export const items = {
           "LowHealthThreshold": "40",
           "FervorMovespeed": "4m",
           "FervorFireRate": "40",
-          "FervorspiritResist": "45"
+          "FervorTechResist": "45"
         },
         "LingerDuration": "6"
       },
@@ -633,9 +633,9 @@ export const items = {
         "Duration": "11",
         "Conditionals": {
           "SpiritDamage": "50",
-          "spiritvitalityDamageReduction": "-12"
+          "TechArmorDamageReduction": "-12"
         },
-        "spiritShieldMaxHealth": "80",
+        "TechShieldMaxHealth": "80",
         "BonusHealthRegen": "0.8",
         "BonusMeleeDamagePercent": "12"
       },
@@ -674,7 +674,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "spirit",
         "Cooldown": "0",
-        "spiritPower": "9",
+        "TechPower": "9",
         "BonusHealthRegen": "1",
         "BonusHealth": "35"
       },
@@ -699,7 +699,7 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": 6.25,
         "Conditionals": { "Damage": "35", "MinimumDamage": "80" },
-        "spiritShieldMaxHealth": "40",
+        "TechShieldMaxHealth": "40",
         "BaseAttackDamagePercent": "6"
       },
       "Mystic_Reach": {
@@ -709,9 +709,9 @@ export const items = {
         "Activation": "Passive",
         "Slot": "spirit",
         "Cooldown": "0",
-        "spiritRangeMultiplier": "16",
-        "spiritRadiusMultiplier": "16",
-        "spiritResist": "6"
+        "TechRangeMultiplier": "16",
+        "TechRadiusMultiplier": "16",
+        "TechResist": "6"
       }
     },
     2: {
@@ -734,7 +734,7 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": "0",
         "Duration": "8",
-        "Conditionals": { "BulletvitalityReduction": "-12" },
+        "Conditionals": { "BulletArmorReduction": "-12" },
         "BonusHealth": "100",
         "BulletResist": "5"
       },
@@ -754,7 +754,7 @@ export const items = {
           "SlowPercent": "40",
           "Damage": "75"
         },
-        "spiritResist": "10"
+        "TechResist": "10"
       },
       "Slowing_Hex": {
         "Description": "Deals Spirit Damage and Slows targets movement and dashes. Also Silences their movement-based items and abilities.<br>Does not affect target's stamina usage.",
@@ -765,7 +765,7 @@ export const items = {
         "Cooldown": 26,
         "Duration": "3.0",
         "CastRange": "25m",
-        "spiritPower": "5",
+        "TechPower": "5",
         "BonusSprintSpeed": "1m",
         "Conditionals": {
           "GroundDashReductionPercent": "-30",
@@ -791,8 +791,8 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": "0",
         "Duration": "6",
-        "Conditionals": { "spiritvitalityDamageReduction": "-12" },
-        "spiritResist": "6"
+        "Conditionals": { "TechArmorDamageReduction": "-12" },
+        "TechResist": "6"
       },
       "Quicksilver_Reload": {
         "Description": "Imbue an ability with bonus Spirit Damage on the first hit.  When the ability is used, your weapon is reloaded and has a Fire Rate bonus for that clip.",
@@ -817,7 +817,7 @@ export const items = {
         "Cooldown": 32,
         "Duration": "10",
         "CastRange": "15m",
-        "spiritPower": "7",
+        "TechPower": "7",
         "Conditionals": {
           "HealAmpReceivePenaltyPercent": "-50",
           "HealAmpRegenPenaltyPercent": "-50",
@@ -833,7 +833,7 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": "0",
         "Duration": "2.0",
-        "spiritPower": "4",
+        "TechPower": "4",
         "BonusHealth": "50",
         "BonusHealthRegen": "2.5",
         "Conditionals": { "FireRateSlow": "25" }
@@ -847,7 +847,7 @@ export const items = {
         "Cooldown": 26,
         "Duration": "4.5",
         "CastRange": "24m",
-        "Conditionals": { "FireRateSlow": "40", "BulletvitalityReduction": "-14" },
+        "Conditionals": { "FireRateSlow": "40", "BulletArmorReduction": "-14" },
         "BonusFireRate": "8",
         "SpiritPower": "4",
         "BonusHealth": "50"
@@ -892,7 +892,7 @@ export const items = {
           "MinimumDamage": "125",
           "ReProcLockoutTime": "5",
           "MaxHealthDamage": "9",
-          "spiritShieldMaxHealth": "100",
+          "TechShieldMaxHealth": "100",
           "BaseAttackDamagePercent": "8"
         }
       },
@@ -905,7 +905,7 @@ export const items = {
         "Components": ["upgrade_suppressor"],
         "Cooldown": "0",
         "Duration": "2.0",
-        "spiritPower": "6",
+        "TechPower": "6",
         "Conditionals": { "FireRateSlow": "40", "MovementSpeedSlow": "30" },
         "BonusHealthRegen": "3",
         "BonusHealth": "100"
@@ -918,7 +918,7 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": 10.5,
         "Conditionals": {
-          "ImbuedspiritPower": "34",
+          "ImbuedTechPower": "34",
           "FireRateBonus": "10",
           "BonusMoveSpeed": "3m",
           "MovementSpeedBonusDuration": "6"
@@ -963,7 +963,7 @@ export const items = {
         "Slot": "spirit",
         "Components": ["upgrade_improved_spirit"],
         "Cooldown": "0",
-        "spiritPower": "21",
+        "TechPower": "21",
         "BonusHealthRegen": "3",
         "BonusSprintSpeed": "1m",
         "BonusHealth": "100"
@@ -976,8 +976,8 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": 48,
         "CastRange": "45m",
-        "spiritPower": "6",
-        "spiritShieldMaxHealth": "200",
+        "TechPower": "6",
+        "TechShieldMaxHealth": "200",
         "Stamina": "1",
         "Conditionals": {
           "StunDelay": "2",
@@ -996,7 +996,7 @@ export const items = {
         "Duration": "3.0",
         "CastRange": "25m",
         "Conditionals": { "Damage": "100" },
-        "spiritShieldMaxHealth": "150",
+        "TechShieldMaxHealth": "150",
         "BonusSprintSpeed": "1m"
       },
       "Torment_Pulse": {
@@ -1006,7 +1006,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "spirit",
         "Cooldown": 1.75,
-        "spiritPower": "6",
+        "TechPower": "6",
         "BonusHealth": "140",
         "Conditionals": { "DamagePulseAmount": "40", "DamagePulseRadius": "9m" }
       },
@@ -1018,12 +1018,12 @@ export const items = {
         "Slot": "spirit",
         "Components": ["upgrade_magic_reach"],
         "Cooldown": "0",
-        "spiritPower": "8",
-        "NonImbuedspiritRangeMultiplier": "25",
-        "NonImbuedspiritRadiusMultiplier": "25",
-        "ImbuedspiritRangeMultiplier": "35",
-        "ImbuedspiritRadiusMultiplier": "35",
-        "spiritResist": "12"
+        "TechPower": "8",
+        "NonImbuedTechRangeMultiplier": "25",
+        "NonImbuedTechRadiusMultiplier": "25",
+        "ImbuedTechRangeMultiplier": "35",
+        "ImbuedTechRadiusMultiplier": "35",
+        "TechResist": "12"
       }
     },
     4: {
@@ -1035,7 +1035,7 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": 21,
         "CastRange": "0",
-        "spiritPower": "12",
+        "TechPower": "12",
         "BonusMoveSpeed": "1m",
         "BulletResist": "16"
       },
@@ -1047,7 +1047,7 @@ export const items = {
         "Slot": "spirit",
         "Cooldown": 212,
         "CastRange": "0",
-        "spiritResist": "16",
+        "TechResist": "16",
         "BulletResist": "8"
       },
       "Diviner's_Kevlar": {
@@ -1060,9 +1060,9 @@ export const items = {
         "LifestealPercentHero": "20",
         "CooldownReduction": "12",
         "Conditionals": {
-          "spiritPower": "40",
+          "TechPower": "40",
           "BulletShieldOnCast": "700",
-          "spiritShieldOnCast": "700",
+          "TechShieldOnCast": "700",
           "BuffDuration": "15"
         }
       },
@@ -1076,9 +1076,9 @@ export const items = {
         "Cooldown": "0",
         "Duration": "15",
         "Conditionals": { "ProcCooldown": "0.7", "MagicIncreasePerStack": "6" },
-        "spiritResist": "15",
+        "TechResist": "15",
         "BonusHealth": "125",
-        "spiritvitalityDamageReduction": "-15"
+        "TechArmorDamageReduction": "-15"
       },
       "Curse": {
         "Description": "Curses an enemy - interrupting, Silencing, Disarming, and preventing item usage.",
@@ -1089,7 +1089,7 @@ export const items = {
         "Cooldown": 53,
         "Duration": "3.25",
         "CastRange": "20m",
-        "spiritPower": "8",
+        "TechPower": "8",
         "BaseAttackDamagePercent": "20",
         "Conditionals": { "SkipFrames": "6", "SlowPercent": "0" }
       },
@@ -1102,12 +1102,12 @@ export const items = {
         "Cooldown": 32,
         "Duration": "7",
         "CastRange": "0",
-        "spiritPower": "15",
+        "TechPower": "15",
         "Conditionals": {
           "SummonDuration": "1.3",
           "ShieldDuration": "16",
           "FlyingBulletShield": "400",
-          "FlyingspiritShield": "400",
+          "FlyingTechShield": "400",
           "FlyMoveSpeed": "6m"
         },
         "BonusHealth": "150",
@@ -1121,7 +1121,7 @@ export const items = {
         "Slot": "spirit",
         "Components": ["upgrade_soaring_spirit"],
         "Cooldown": "0",
-        "spiritPower": "60",
+        "TechPower": "60",
         "BonusHealthRegen": "15",
         "BaseAttackDamagePercent": "25",
         "BonusSprintSpeed": "2m",
@@ -1136,11 +1136,11 @@ export const items = {
         "Cooldown": 6.25,
         "Radius": "16m",
         "LifestealPercentHero": "15",
-        "spiritResist": "15",
-        "spiritRangeMultiplier": "15",
+        "TechResist": "15",
+        "TechRangeMultiplier": "15",
         "Conditionals": {
           "MovementSpeedSlow": "50",
-          "spiritDamagePercent": "40",
+          "TechDamagePercent": "40",
           "DelayDuration": "3",
           "MinimumDamage": "100"
         }
@@ -1178,7 +1178,7 @@ export const items = {
         "Slot": "vitality",
         "Cooldown": 64,
         "CastRange": "30m",
-        "spiritPower": "3",
+        "TechPower": "3",
         "BonusHealth": "45",
         "Conditionals": {
           "TotalHealthRegen": "370",
@@ -1219,7 +1219,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "vitality",
         "Cooldown": "0",
-        "spiritPower": "4",
+        "TechPower": "4",
         "BonusHealth": "75",
         "LifestealPercentHero": "10"
       },
@@ -1236,7 +1236,7 @@ export const items = {
       }
     },
     2: {
-      "Bullet_vitality": {
+      "Bullet_Armor": {
         "Description": "Decreases damage taken from bullets.",
         "Cost": "1250",
         "Tier": "2",
@@ -1294,7 +1294,7 @@ export const items = {
         "Slot": "vitality",
         "Cooldown": "0",
         "BonusHealthRegen": "2",
-        "spiritResist": "6",
+        "TechResist": "6",
         "Conditionals": {
           "HealAmpCastPercent": "25",
           "HealAmpRegenPercent": "25",
@@ -1312,7 +1312,7 @@ export const items = {
         "CastRange": "0",
         "BaseAttackDamagePercent": "10",
         "BonusHealth": "100",
-        "spiritPower": "4",
+        "TechPower": "4",
         "Conditionals": {
           "TotalHealthRegen": "260",
           "HeroTargetBonus": "20",
@@ -1327,7 +1327,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "vitality",
         "Cooldown": "0",
-        "spiritShieldMaxHealth": "300",
+        "TechShieldMaxHealth": "300",
         "Conditionals": {
           "BonusSpiritWithMagicShield": "20",
           "CooldownReductionWithShield": "8"
@@ -1354,8 +1354,8 @@ export const items = {
         "Slot": "vitality",
         "Cooldown": 30,
         "CastRange": "30m",
-        "spiritPower": "5",
-        "spiritResist": "8",
+        "TechPower": "5",
+        "TechResist": "8",
         "Conditionals": {
           "Radius": "50m",
           "HealPerStack": "35",
@@ -1371,7 +1371,7 @@ export const items = {
         "Cooldown": 25,
         "Duration": "7",
         "CastRange": "0",
-        "spiritPower": "7",
+        "TechPower": "7",
         "BonusFireRate": "7",
         "BonusHealth": "125",
         "Conditionals": {
@@ -1387,8 +1387,8 @@ export const items = {
         "Slot": "vitality",
         "Cooldown": 30,
         "CastRange": "35m",
-        "spiritRangeMultiplier": "8",
-        "spiritRadiusMultiplier": "8",
+        "TechRangeMultiplier": "8",
+        "TechRadiusMultiplier": "8",
         "BonusSprintSpeed": "1m",
         "Conditionals": {
           "BonusMoveSpeed": "2m",
@@ -1398,15 +1398,15 @@ export const items = {
         },
         "BonusHealth": "75"
       },
-      "Spirit_vitality": {
+      "Spirit_Armor": {
         "Description": "Reduces the damage you take from Spirit abilities.",
         "Cost": "1250",
         "Tier": "2",
         "Activation": "Passive",
         "Slot": "vitality",
         "Cooldown": "0",
-        "spiritPower": "5",
-        "spiritResist": "20"
+        "TechPower": "5",
+        "TechResist": "20"
       },
       "Reactive_Barrier": {
         "Description": "Automatically deploy temporary Bullet and Spirit Shields when you are movement locked, Stunned, Chained, Immobilized, or Slept.",
@@ -1418,7 +1418,7 @@ export const items = {
         "Duration": "10",
         "Conditionals": {
           "VexBarrierBulletMaxHealth": "400",
-          "VexBarrierspiritMaxHealth": "200",
+          "VexBarrierTechMaxHealth": "200",
           "VexBarrierShieldDuration": "9"
         },
         "BonusClipSizePercent": "15",
@@ -1446,13 +1446,13 @@ export const items = {
         "BulletResist": "8",
         "BonusHealth": "125"
       },
-      "Improved_Bullet_vitality": {
+      "Improved_Bullet_Armor": {
         "Description": "Decreases damage taken from bullets.",
         "Cost": "3000",
         "Tier": "3",
         "Activation": "Passive",
         "Slot": "vitality",
-        "Components": ["upgrade_bullet_vitality"],
+        "Components": ["upgrade_bullet_armor"],
         "Cooldown": "0",
         "BulletResist": "45",
         "BaseAttackDamagePercent": "10"
@@ -1482,7 +1482,7 @@ export const items = {
         "Cooldown": 21,
         "Duration": "3.5",
         "CastRange": "0",
-        "spiritPower": "8",
+        "TechPower": "8",
         "BonusFireRate": "8",
         "BonusHealth": "125"
       },
@@ -1519,7 +1519,7 @@ export const items = {
         },
         "BonusHealth": "125",
         "BonusSprintSpeed": "2m",
-        "spiritPower": "9"
+        "TechPower": "9"
       },
       "Majestic_Leap": {
         "Description": "Launch yourself high into the air. While in the air, you can use the active again to drop down faster.<br>Cannot be used for 5s if attacked by enemy Hero.",
@@ -1531,7 +1531,7 @@ export const items = {
         "CastRange": "0",
         "Conditionals": { "InteruptCooldown": "5" },
         "BonusHealth": "125",
-        "spiritPower": "10"
+        "TechPower": "10"
       },
       "Superior_Stamina": {
         "Description": null,
@@ -1541,22 +1541,22 @@ export const items = {
         "Slot": "vitality",
         "Components": ["upgrade_improved_stamina"],
         "Cooldown": "0",
-        "spiritPower": "8",
+        "TechPower": "8",
         "Stamina": "3",
         "StaminaCooldownReduction": "20",
         "BonusFireRate": "7",
         "AirMoveIncreasePercent": "30"
       },
-      "Improved_Spirit_vitality": {
+      "Improved_Spirit_Armor": {
         "Description": null,
         "Cost": "3000",
         "Tier": "3",
         "Activation": "Passive",
         "Slot": "vitality",
-        "Components": ["upgrade_spirit_vitality"],
+        "Components": ["upgrade_tech_armor"],
         "Cooldown": "0",
-        "spiritPower": "8",
-        "spiritResist": "45"
+        "TechPower": "8",
+        "TechResist": "45"
       },
       "Veil_Walker": {
         "Description": "Walking through a cosmic veil grants you Stealth, increased Movement Speed, restores all Bullet and Spirit Shields, and grants bonus Fire Rate for your next magazine.",
@@ -1584,7 +1584,7 @@ export const items = {
         "Cooldown": 48,
         "Duration": "25",
         "CastRange": "0",
-        "spiritShieldMaxHealth": "300",
+        "TechShieldMaxHealth": "300",
         "BonusHealthRegen": "15",
         "BonusClipSizePercent": "30",
         "Conditionals": {
@@ -1593,7 +1593,7 @@ export const items = {
           "FullInvisDistance": "50m",
           "AmbushDuration": "8",
           "AmbushBonusFireRate": "40",
-          "AmbushBonusspiritPower": "55"
+          "AmbushBonusTechPower": "55"
         }
       },
       "Colossus": {
@@ -1610,7 +1610,7 @@ export const items = {
         "BaseAttackDamagePercent": "20",
         "Conditionals": {
           "BulletResist": "40",
-          "spiritResist": "40",
+          "TechResist": "40",
           "SlowPercent": "35",
           "GroundDashReductionPercent": "-25",
           "Radius": "12m",
@@ -1624,7 +1624,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "vitality",
         "Cooldown": "0",
-        "spiritPower": "12",
+        "TechPower": "12",
         "LifestealPercentHero": "35",
         "BulletLifestealPercent": "35",
         "BaseAttackDamagePercent": "15",
@@ -1668,7 +1668,7 @@ export const items = {
         "Activation": "Passive",
         "Slot": "vitality",
         "Cooldown": 212,
-        "spiritPower": "12",
+        "TechPower": "12",
         "RespawnDelay": "4",
         "Conditionals": { "RespawnHealthPercent": "50" },
         "CooldownReduction": "15"
@@ -1683,7 +1683,7 @@ export const items = {
         "Duration": "6",
         "CastRange": "0",
         "BonusHealth": "150",
-        "spiritResist": "15",
+        "TechResist": "15",
         "BonusMoveSpeed": "1m",
         "SpiritPower": "12"
       }
