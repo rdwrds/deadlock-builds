@@ -3,21 +3,57 @@
   --default-background: #28271e;
   --tan-background: #ccbda7;
   --grey-background: #525659;
-  --souls-color: #5b8880;
-  --weapon-color: #e09b2f;
-  --spirit-color: #ce91fe;
-  --vitality-color: #84b430;
+  --souls-color: #55ab9c;
+
+  /* tinted colors */
+  --weapon-100: #f9ebd5;
+  --weapon-200: #f3d7ac;
+  --weapon-300: #ecc382;
+  --weapon-400: #e6af59;
+  /* base */
+  --weapon-500: #e09b2f;
+  /* shaded colors */
+  --weapon-600: #b37c26;
+  --weapon-700: #865d1c;
+  --weapon-800: #5a3e13;
+  --weapon-900: #2d1f09;
+
+  /* tinted colors */
+  --spirit-100: #f5e9ff;
+  --spirit-200: #ebd3ff;
+  --spirit-300: #e2bdfe;
+  --spirit-400: #d8a7fe;
+  /* base */
+  --spirit-500: #ce91fe;
+  /* shaded colors */
+  --spirit-600: #a574cb;
+  --spirit-700: #7c5798;
+  --spirit-800: #523a66;
+  --spirit-900: #291d33;
+
+  /* tinted colors */
+  --vitality-100: #e6f0d6;
+  --vitality-200: #cee1ac;
+  --vitality-300: #b5d283;
+  --vitality-400: #9dc359;
+  /* base */
+  --vitality-500: #84b430;
+  /* shaded colors */
+  --vitality-600: #6a9026;
+  --vitality-700: #4f6c1d;
+  --vitality-800: #354813;
+  --vitality-900: #1a240a;
 }
 
 @font-face {
-  font-family: "forevs";
+  font-family: "Forevs";
   src: url("../assets/fonts/ForevsVariable-Italic.woff2") format("woff2");
 }
 
 body {
   margin: 0px;
   background-color: rgba(0, 0, 0, 0.7);
-  font-family: "forevs", system-ui;
+  font-family: "Forevs Demo", system-ui;
 }
 
 div {
@@ -37,6 +73,7 @@ div {
   width: 80vw;
   height: fit-content;
   margin: auto;
+  z-index: 2;
 }
 
 .item-tabs-container {
@@ -67,7 +104,6 @@ div {
 }
 
 .items {
-  background-color: var(--weapon-color);
   display: grid;
   grid-template-columns: 10% 1fr;
   grid-template-rows: 25% 1fr 1fr 1fr;
@@ -76,37 +112,58 @@ div {
   width: 100%;
   margin: 0px auto;
   padding: 0.25rem 0;
+  background-color: var(--weapon-colors);
 }
 
 .tier-label {
+  display: flex;
   margin: 2px 0px 2px 10px;
   border-radius: 0px;
-  box-shadow-right: none;
+  box-shadow: none;
   padding: auto;
+  justify-content: center;
+  vertical-align: center;
 }
 
-.tier-label > p {
-  position: relative;
-  text-align: center;
-  vertical-align: center;
+.rotate-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  box-shadow: none;
   transform: rotate(-90deg);
+}
+
+.souls-icon {
+  display: inline;
+  width: 20%;
+  margin: 0;
+}
+
+.tier-cost {
+  margin: auto 0;
+  display: inline-block;
+  color: var(--souls-color);
+  text-shadow: 0px 0px 3px black;
 }
 
 .tier-grid {
   position: relative;
-  margin: 2px;
-  margin-left: 0px;
   display: grid;
-  padding: 10px;
+  margin-right: 1%;
+  padding: 1%;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   column-gap: 5px;
   row-gap: 10px;
+  box-shadow: none;
+  border-radius: 0px;
 }
 
 .item {
   position: relative;
   background-color: var(--text-background);
+  min-width: 0;
+  transition: opacity .25s;
 }
 
 .item:hover {
@@ -149,15 +206,21 @@ div {
   padding: 0;
   opacity: 0;
   transition: opacity 1s;
+  color: white;
 }
 
 .hide-body {
-  filter: brightness(75%);
   position: relative;
   height: 60%;
   width: 100%;
   box-shadow: none;
   border-radius: 0;
+  padding-bottom: 5%;
+}
+
+.hide h3, h5, p {
+  margin: 5% 0;
+  padding: 0 5%
 }
 
 .hide-body > section > p {
@@ -165,23 +228,89 @@ div {
   font-size: 0.75vw;
 }
 
+.champs-wrapper {
+  margin-left: 1%;
+  width: fit-content;
+}
+
+.build-info {
+  display: flex;
+  background-color: var(--grey-background);
+  margin-bottom: 2%;
+}
+
+.build-stats {
+  width: 50%;
+  margin: 2% auto;
+  margin-left: 5%;
+  background-color: var(--grey-background);
+  box-shadow: inset 2px 2px 5px black;
+  padding: 2%;
+}
+
+.current-champ {
+  position: relative;
+  width: 20%;
+  margin: 2% auto;
+  margin-right: 5%;
+  height: 18%;
+  background-color: var(--tan-background);
+  box-shadow: 0px 0px 5px black;
+}
+
+.current-champ > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2%;
+}
+
 .champs {
   background-color: var(--grey-background);
   margin: auto;
-  margin-left: 1%;
   padding: 10px;
-  height: 35vmax;
+  height: 50vh;
   width: 30vmax;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 10px;
   row-gap: 10px;
+  overflow: scroll;
+  box-shadow: inset 0px 0px 5px black;
+  z-index: 1;
+}
+
+.champs::-webkit-scrollbar {
+  display: none;
 }
 
 .champ {
-  background-color: var(--souls-color);
-  z-index: 1;
+  position: relative;
+  background-color: var(--tan-background);
+  transition: opacity 0.25s;
+}
+
+.champ:hover {
+  cursor: pointer;
+}
+
+.champ > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1%;
+}
+
+.champ-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-family: serif;
+  font-weight: 800;
+  text-shadow: 0px 0px 8px black, 0px 0px 8px black, 0px 0px 8px black;
+  color: var(--tan-background);
 }
 
 .inventory {
@@ -214,13 +343,15 @@ div {
   display: inline-block;
   width: 50%;
   margin: 10%;
+  filter: brightness(15%);
 }
 
 .weapon-slots,
 .spirit-slots,
 .vitality-slots,
 .flex-slots,
-.active-item {
+.active-slots {
+  position: relative;
   background-color: var(--grey-background);
   display: flex; /* Ensures image can be centered */
   justify-content: center; /* Centers image horizontally */
@@ -228,10 +359,46 @@ div {
   width: 100%;
 }
 
-.active-slots {
+.active-inventory {
   background-color: grey;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 10px;
   padding: 10% 10px;
+}
+
+.tier-icon {
+  position: absolute;
+  margin: 0;
+  top: 0%;
+  font-size: 1em;
+  text-shadow: 0px 1px 6px rgba(0,0,0, .7);
+}
+
+.conditional-stats {
+  margin: 5%;
+  margin-bottom: 0;
+  padding: 2%;
+}
+
+.activation-section {
+  background-color: rgba(0,0,0,.5);
+  height: 10%;
+  width: 100%;
+}
+
+.activation-section > p {
+  display: inline;
+  margin: auto;
+}
+
+.cooldown-section {
+  background-color: black;
+  border-radius: 0;
+  box-shadow: none;
+  float: right;
+}
+
+.base-stat-text, .conditional-stat-text {
+  margin: 0;
 }
