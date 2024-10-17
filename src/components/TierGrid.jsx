@@ -7,8 +7,9 @@ const TierGrid = ({ tier }, key) => {
   const { currentTab, setCurrentTab, getCurrentStyle } = useContext(TabContext);
   const itemsInTier = items[currentTab][tier];
 
+  const bgStyle = {backgroundColor: tier % 2 != 0 ? `var(--${currentTab}-700)` : `var(--${currentTab}-800)`}
   return (
-    <div className="tier-grid" >
+    <div className="tier-grid" style={bgStyle}>
       {Object.entries(itemsInTier).map((item) => {
         const [name, stats] = item
         return(
