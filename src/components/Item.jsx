@@ -1,51 +1,64 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect, act } from "react";
 import { TabContext } from "./TabContext";
 import { colors } from "../Colors";
+import HoverBody from "./HoverBody";
 
 const Item = (obj) => {
-  const {
-    name,
-    Activation,
-    Cooldown,
-    Cost,
-    Description,
-    Slot,
-    Tier,
-    Conditionals,
-  } = obj;
+  const { name, Activation, Slot } = obj;
 
-  const {
-    currentBuild,
-    setCurrentBuild,
-    currentTab,
-    setCurrentTab,
-    getCurrentStyle,
-  } = useContext(TabContext);
+  const { currentBuild, setCurrentBuild, currentTab, getCurrentStyle } =
+    useContext(TabContext);
 
-  const stats = Conditionals ? Object.entries(Conditionals) : [];
+  let activeItems = [];
+
+  useEffect(() => {
+    activeItems = getActiveItems();
+  }, [currentBuild]);
 
   const displayName = name.replace(/_/g, " ");
 
   const getImgUrl = () => {
-    let ext = ".png"; // can be anything
     const imgUrl = new URL(`../assets/items/${name}.png`, import.meta.url).href;
     return imgUrl;
   };
 
-  let test = "";
+  const getActiveItems = () => {
+    const weaponActives = currentBuild["weapon"].filter(
+      (item) => item?.["Activation"] !== "Passive"
+    );
+    const spiritActives = currentBuild["spirit"].filter(
+      (item) => item?.["Activation"] !== "Passive"
+    );
+    const vitalityActives = currentBuild["vitality"].filter(
+      (item) => item?.["Activation"] !== "Passive"
+    );
+    const flexActives = currentBuild["flex"].filter(
+      (item) => item?.["Activation"] !== "Passive"
+    );
+
+    return [
+      ...weaponActives,
+      ...spiritActives,
+      ...vitalityActives,
+      ...flexActives,
+    ];
+  };
+
+  const foundInSlot = currentBuild[Slot].find(
+    (element) => element["name"] === name
+  );
+  const foundInFlex = currentBuild["flex"].find(
+    (element) => element["name"] === name
+  );
+
   const alterBuild = () => {
     //NOTE: this will not work for if items are components.
     //need extra logic to see if components of items are in a slot already zzz
 
     //see if the item is in a normal/flex slot already
-    const foundInSlot = currentBuild[Slot].findIndex(
-      (element) => element["name"] === name
-    );
-    const foundInFlex = currentBuild["flex"].findIndex(
-      (element) => element["name"] === name
-    );
+    console.log(currentBuild);
 
-    if (foundInSlot != -1) {
+    if (foundInSlot) {
       setCurrentBuild({
         ...currentBuild,
         [Slot]: currentBuild[Slot].filter(
@@ -53,13 +66,19 @@ const Item = (obj) => {
         ),
       });
       return;
-    } else if (foundInFlex != -1) {
+    } else if (foundInFlex) {
       setCurrentBuild({
         ...currentBuild,
         ["flex"]: currentBuild["flex"].filter(
           (element) => element["name"] !== name
         ),
       });
+      return;
+    }
+
+    //if we're trying to add an active item, make sure the slots arent full
+    if (Activation !== "Passive" && activeItems.length >= 4) {
+      alert("cannot add item: active slots are full.");
       return;
     }
 
@@ -80,42 +99,23 @@ const Item = (obj) => {
     } else {
       alert(`cannot add item: ${Slot} and flex inventories are full.`);
     }
-
-    if (foundInFlex != -1) {
-      setCurrentBuild({
-        ...currentBuild,
-        [Slot]: currentBuild["flex"].filter(
-          (element) => element["name"] !== name
-        ),
-      });
-    }
   };
 
+   //this is only like this because getCurrentStyle() returns an object,
+  //and inline styles can only be one object. so rather than revamp
+  //the whole project its easier to just do this short workaround
+
+  let itemStyle = getCurrentStyle(currentTab);
+  itemStyle = {
+    ...itemStyle,
+    opacity: foundInSlot || foundInFlex ? "0.3" : "1",
+  };
+  
   return (
-    <div
-      className="item"
-      style={getCurrentStyle(currentTab)}
-      onClick={alterBuild}
-    >
+    <div className="item" style={itemStyle} onClick={alterBuild}>
       <img src={getImgUrl()} alt="" />
       <p>{displayName}</p>
-      <div className="hide" style={getCurrentStyle(currentTab)}>
-        <h3 style={{ margin: "0" }}>{displayName}</h3>
-        <div className="hide-body" style={getCurrentStyle(currentTab)}>
-          <p>{Description}</p>
-          <section>
-            {stats &&
-              stats.map((stat) => {
-                const [name, val] = stat;
-                return (
-                  <p>
-                    {name}: {val}
-                  </p>
-                );
-              })}
-          </section>
-        </div>
-      </div>
+      <HoverBody obj={obj} />
     </div>
   );
 };
