@@ -8,7 +8,7 @@ const Items = () => {
   const { currentTab, setCurrentTab, getCurrentStyle } = useContext(TabContext);
 
   return (
-    <div className="items" style={getCurrentStyle(currentTab)}>
+    <div className="items" style={getCurrentStyle(currentTab, 600)}>
       <TierLabel tier={1} key={1}/>
       <TierGrid tier={1} key = {2}/>
       <TierLabel tier={2} key = {3}/>
