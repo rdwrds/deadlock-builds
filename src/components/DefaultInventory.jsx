@@ -1,9 +1,16 @@
 import { useContext, useEffect } from "react";
 import { TabContext } from "./TabContext";
-import { getCurrentStyle } from "../Colors";
+import { colors, getCurrentStyle } from "../Colors";
 
 const DefaultInventory = ({ type }) => {
   const { currentBuild } = useContext(TabContext);
+
+  const romanNumerals = [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ]
 
   const getImgUrl = (name) => {
     let ext = ".png"; // can be anything
@@ -11,27 +18,23 @@ const DefaultInventory = ({ type }) => {
     return imgUrl;
   };
 
-  let img0 = getImgUrl(currentBuild[type]?.[0]?.["name"] || "placeholder");
-  let img1 = getImgUrl(currentBuild[type]?.[1]?.["name"] || "placeholder");
-  let img2 = getImgUrl(currentBuild[type]?.[2]?.["name"] || "placeholder");
-  let img3 = getImgUrl(currentBuild[type]?.[3]?.["name"] || "placeholder");
-
-  
+  let images = [];
+  for (let i = 0; i < 4; i += 1) {
+    images.push(getImgUrl(currentBuild[type]?.[i]?.["name"] || "placeholder"));
+  }
 
   return (
     <div className={`${type}-inventory`}>
-      <div className={`${type}-slots`} style={getCurrentStyle(type)}>
-        <img src={img0}></img>
-      </div>
-      <div className={`${type}-slots`} style={getCurrentStyle(type)}>
-        <img src={img1}></img>
-      </div>
-      <div className={`${type}-slots`} style={getCurrentStyle(type)}>
-        <img src={img2}></img>
-      </div>
-      <div className={`${type}-slots`} style={getCurrentStyle(type)}> 
-        <img src={img3}></img>
-      </div>
+      {images.map((img, index) => {
+        const tier = currentBuild[type]?.[index]?.["Tier"]
+        const slot = currentBuild[type]?.[index]?.["Slot"]
+        return (
+          <div className={`${type}-slots`} style={getCurrentStyle(slot)}>
+            <h1 className="tier-icon" style={{color: colors[`${slot}500`]}}>{romanNumerals[tier-1]}</h1>
+            <img src={img}></img>
+          </div>
+        );
+      })}
     </div>
   );
 };
