@@ -252,7 +252,7 @@ export const items = {
         "SingleTargetPlayerMultiplier": "3"
       },
       "Burst_Fire": {
-        "Description": "Briefly gain Fire Rate and Move Speed when one of your bullets hits an enemy hero.",
+        "Description": "Briefly gain Fire Rate and Speed when one of your bullets hits an enemy hero.",
         "Cost": "3000",
         "Tier": "3",
         "Activation": "Passive",
