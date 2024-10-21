@@ -61,10 +61,32 @@ div {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+#root {
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .header {
   height: 50px;
   margin-bottom: 10px;
 }
+
+.nav-link {
+  width: 10%;
+  margin: 0 auto;
+  padding: 1%;
+  background-color: var(--tan-background);
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.7);
+  transition: opacity .25s;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+
 
 .outer {
   display: flex;
@@ -214,8 +236,9 @@ div {
   height: 60%;
   width: 100%;
   box-shadow: none;
-  border-radius: 0;
+  //border-radius: 0;
   padding-bottom: 5%;
+  opacity: 1;
 }
 
 .hide h3, h5, p {
