@@ -1,43 +1,32 @@
-import { useState} from "react";
+import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import Outer from "./components/Outer";
-import Header from "./components/Header";
-import DefaultInventory from "./components/DefaultInventory";
-import ActiveSlots from "./components/ActiveSlots";
-import { TabContext } from "./components/TabContext";
-import { createGlobalStyle } from "styled-components";
-import { colors, getCurrentStyle } from "./Colors";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage, Landing } from "./pages";
+import BuildPage from "./pages/BuildPage";
 
 const Main = () => {
-  const inventory = {
-    champ: "",
-    weapon: [],
-    spirit: [],
-    vitality: [], 
-    flex: [],
-  }
-  const [currentBuild, setCurrentBuild] = useState(inventory);
-  const [currentTab, setCurrentTab] = useState("weapon");
-
-  console.log(currentBuild)
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage/>,
+      children: [
+        {
+          index: true,
+          element: <Landing/>,
+        },
+        {
+          path: "/new-build",
+          element: <BuildPage/>
+        }
+      ]
+    },
+  ]);
 
   return (
     <>
-      <Header />
-      <TabContext.Provider
-        value={{currentBuild, setCurrentBuild, currentTab, setCurrentTab, getCurrentStyle }}
-      >
-        <Outer />
-        <div className="inventory">
-          <DefaultInventory type="weapon"/>
-          <DefaultInventory type="vitality"/>
-          <DefaultInventory type="spirit"/>
-          <DefaultInventory type="flex"/>
-          <ActiveSlots/>
-        </div>
-      </TabContext.Provider>
+      <RouterProvider router={router}/>
     </>
   );
 };
 
-createRoot(document.getElementById("root")).render(<Main/>);
+createRoot(document.getElementById("root")).render(<Main />);
