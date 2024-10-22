@@ -1,0 +1,61 @@
+.inventory {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 1fr;
+    column-gap: 10px;
+    padding: 2%;
+    height: auto;
+    width: 70vw;
+    margin: 1% auto;
+    background-color: var(--default-background);
+  }
+  
+.default-inventory,
+.weapon-inventory,
+.vitality-inventory,
+.spirit-inventory,
+.flex-inventory {
+  background-color: grey;
+  padding: 5%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 4%;
+  row-gap: 3%;
+}
+
+.inventory img {
+  display: inline-block;
+  width: 50%;
+  margin: 10%;
+  filter: brightness(15%);
+}
+
+.weapon-slots,
+.spirit-slots,
+.vitality-slots,
+.flex-slots,
+{
+  position: relative;
+  background-color: var(--grey-background);
+  display: flex; /* Ensures image can be centered */
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  width: 100%;
+}
+
+.active-inventory {
+  background-color: grey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  padding: 10% 10px;
+}
+
+.tier-icon {
+  position: absolute;
+  margin: 0;
+  top: 0%;
+  font-size: 1em;
+  text-shadow: 0px 1px 6px rgba(0,0,0, .7);
+}

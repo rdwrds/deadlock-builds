@@ -1,0 +1,39 @@
+.item:hover > .hide {
+    display: inline-block;
+    opacity: 100%;
+  }
+  
+  .hide {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    left: 100%;
+    background-color: var(--weapon-color);
+    width: 15vw;
+    height: fit-content;
+    margin-left: 25%;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    color: white;
+  }
+  
+  .hide-body {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    box-shadow: none;
+    //border-radius: 0;
+    padding-bottom: 5%;
+    opacity: 1;
+  }
+  
+  .hide h3, h5, p {
+    margin: 5% 0;
+    padding: 0 5%
+  }
+  
+  .hide-body > section > p {
+    margin: 0;
+    font-size: 0.75vw;
+  }

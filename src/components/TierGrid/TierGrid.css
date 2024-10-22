@@ -1,0 +1,13 @@
+.tier-grid {
+    position: relative;
+    display: grid;
+    margin-right: 1%;
+    padding: 1%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 10px;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+  

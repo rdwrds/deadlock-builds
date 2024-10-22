@@ -1,0 +1,11 @@
+.items {
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    grid-template-rows: 25% 1fr 1fr 1fr;
+    border-radius: 0.5%;
+    height: 110%;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0.25rem 0;
+    background-color: var(--weapon-colors);
+  }

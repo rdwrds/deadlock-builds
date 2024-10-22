@@ -1,0 +1,19 @@
+.tabs {
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .tabs button {
+    width: 20%;
+    background-color: var(--tan-background);
+    border: none;
+    margin-right: 0.75%;
+    border-radius: 2.5%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  .tabs button:hover {
+    cursor: pointer;
+    filter: brightness(75%);
+  }

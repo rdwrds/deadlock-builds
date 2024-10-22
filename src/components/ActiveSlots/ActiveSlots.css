@@ -1,0 +1,36 @@
+.active-slots {
+    position: relative;
+    background-color: var(--grey-background);
+    display: flex; /* Ensures image can be centered */
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+    width: 100%;
+  }
+
+  .conditional-stats { 
+    margin: 5%;
+    margin-bottom: 0;
+    padding: 2%;
+  }
+  
+  .activation-section {
+    background-color: rgba(0,0,0,.5);
+    height: 10%;
+    width: 100%;
+  }
+  
+  .activation-section > p {
+    display: inline;
+    margin: auto;
+  }
+  
+  .cooldown-section {
+    background-color: black;
+    border-radius: 0;
+    box-shadow: none;
+    float: right;
+  }
+  
+  .base-stat-text, .conditional-stat-text {
+    margin: 0;
+  }
