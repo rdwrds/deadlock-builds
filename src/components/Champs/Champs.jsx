@@ -1,5 +1,6 @@
 import { TabContext }  from "../../components";
 import { useContext } from "react";
+import "./Champs.css"
 
 const Champs = () => {
   const champs_names = [

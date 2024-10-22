@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TabContext } from "../../components";
 import { colors } from "../../Colors";
-
+import "./ActiveSlots.css"
 const ActiveSlots = () => {
   const {currentBuild, getCurrentStyle} = useContext(TabContext);
   

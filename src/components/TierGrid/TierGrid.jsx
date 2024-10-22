@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { TabContext } from "../../components";
 import {Item} from "../../components";
 import { items } from "../../sorted_deadlock_items_condis";
+import './TierGrid.css'
 
 const TierGrid = ({ tier }, key) => {
   const { currentTab, setCurrentTab, getCurrentStyle } = useContext(TabContext);

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import {Items, Tabs, Champs, TabContext} from "../../components";
 //import { TabContext } from "../TabContext";
 import champ_placeholder from "../../assets/champs/champ_placeholder.png"
+import './Outer.css'
 
 const Outer = () => {
   const { currentBuild } = useContext(TabContext);

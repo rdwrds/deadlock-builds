@@ -2,6 +2,7 @@ import { useContext, useState, useEffect, act } from "react";
 import { TabContext } from "../../components";
 import { colors } from "../../Colors";
 import {HoverBody} from "../../components";
+import './Item.css'
 
 const Item = (obj) => {
   const { name, Activation, Slot } = obj;

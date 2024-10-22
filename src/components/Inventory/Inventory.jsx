@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { TabContext } from "../../components";
 import { colors, getCurrentStyle } from "../../Colors";
+import './Inventory.css'
 
 const Inventory = ({ type }) => {
   const { currentBuild } = useContext(TabContext);
@@ -9,7 +10,7 @@ const Inventory = ({ type }) => {
 
   const getImgUrl = (name) => {
     let ext = ".png"; // can be anything
-    const imgUrl = new URL(`../assets/items/${name}.png`, import.meta.url).href;
+    const imgUrl = new URL(`../../assets/items/${name}.png`, import.meta.url).href;
     return imgUrl;
   };
 

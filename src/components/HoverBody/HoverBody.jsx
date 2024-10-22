@@ -3,6 +3,7 @@ import { TabContext } from "../../components";
 import { formatted_stats } from "../../stats";
 import { colors } from "../../Colors";
 import {formatted_conditionals} from '../../conditional_stats'
+import './HoverBody.css'
 
 const HoverBody = ({ obj }) => {
   const {

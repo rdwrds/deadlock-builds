@@ -2,6 +2,7 @@ import {TierGrid, TierLabel} from "../../components"
 import { useContext } from "react"
 import { TabContext } from "../../components"
 import { colors } from "../../Colors"
+import './Items.css'
 
 const Items = () => {
   const { currentTab, setCurrentTab, getCurrentStyle } = useContext(TabContext);

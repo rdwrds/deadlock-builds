@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import {TabContext} from "../../components";
-
+import './Tabs.css'
 const Tabs = () => {
   const { currentTab, setCurrentTab } = useContext(TabContext);
   console.log(currentTab);

@@ -1,4 +1,5 @@
 import souls_icon from "../../assets/icons/souls_icon.png";
+import './TierLabel.css'
 
 const TierLabel = ({ tier }) => {
   const tier_cost = ["500", "1,250", "3,000+", "6,200+"];
