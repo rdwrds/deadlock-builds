@@ -1,32 +1,17 @@
-import { useContext } from "react";
-import {TabContext} from "../../components";
-import './Tabs.css'
+import { useContext, useState } from "react";
+import { TabContext } from "../../components";
+import TabButton from "./TabButton";
+import "./Tabs.css";
 const Tabs = () => {
-  const { currentTab, setCurrentTab } = useContext(TabContext);
+  const { currentTab } = useContext(TabContext);
+ 
   console.log(currentTab);
+
   return (
     <div className="tabs">
-      <button
-        type="button"
-        className="weapon-tab"
-        onClick={() => {
-          setCurrentTab("weapon");
-        }}
-      >Weapon</button>
-      <button
-        type="button"
-        className="vitality-tab"
-        onClick={() => {
-          setCurrentTab("vitality");
-        }}
-      >Vitality</button>
-      <button
-        type="button"
-        className="spirit-tab"
-        onClick={() => {
-          setCurrentTab("spirit");
-        }}
-      >Spirit</button>
+      <TabButton type="weapon"/>
+      <TabButton type="vitality"/>
+      <TabButton type="spirit"/>
     </div>
   );
 };
