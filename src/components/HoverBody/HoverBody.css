@@ -12,28 +12,48 @@
     width: 15vw;
     height: fit-content;
     margin-left: 25%;
-    padding: 0;
-    opacity: 0;
-    transition: opacity 1s;
+    opacity: 0%;
+    transition: opacity .05s;
     color: white;
   }
   
   .hide-body {
     position: relative;
+    padding: 0 5%
     height: 60%;
     width: 100%;
     box-shadow: none;
     //border-radius: 0;
     padding-bottom: 5%;
     opacity: 1;
+    font-family: system-ui;
   }
   
-  .hide h3, h5, p {
+  .description-text, .display-name, .base-stat-text, .activation-text {
     margin: 5% 0;
-    padding: 0 5%
+    padding: 0 5%;
   }
   
   .hide-body > section > p {
     margin: 0;
     font-size: 0.75vw;
+  }
+
+  .cost-container {
+    display: flex;
+    box-shadow: none;
+    margin-bottom: 5%;
+    flex-gap: 0;
+  }
+
+  .cost-souls-icon {
+    margin: auto 0;
+    padding-left: 5%
+  }
+
+  .cost-text {
+    color: var(--souls-color);
+    text-shadow: 0px 0px 3px black;
+    padding: 0;
+    margin: 0;
   }

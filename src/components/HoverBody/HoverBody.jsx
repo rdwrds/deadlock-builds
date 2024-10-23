@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { TabContext } from "../../components";
 import { formatted_stats } from "../../stats";
 import { colors } from "../../Colors";
-import {formatted_conditionals} from '../../conditional_stats'
-import './HoverBody.css'
+import { formatted_conditionals } from "../../conditional_stats";
+import "./HoverBody.css";
+import souls_icon from "../../assets/icons/souls_icon.png";
 
 const HoverBody = ({ obj }) => {
   const {
@@ -27,7 +28,10 @@ const HoverBody = ({ obj }) => {
   return (
     <div className="hide" style={getCurrentStyle(currentTab)}>
       <h3 className="display-name">{displayName}</h3>
-      <h5 className="cost-text">{Cost}</h5>
+      <div className="cost-container">
+        <img className="cost-souls-icon" src={souls_icon}></img>
+        <h3 className="cost-text">{Cost}</h3>
+      </div>
       <div className="hide-body" style={getCurrentStyle(currentTab)}>
         <div className="activation-section">
           <p className="activation-text">{activationText}</p>
