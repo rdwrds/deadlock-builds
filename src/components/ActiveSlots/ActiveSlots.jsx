@@ -31,7 +31,7 @@ const ActiveSlots = () => {
 
   const getImgUrl = (name) => {
     let ext = ".png"; // can be anything
-    const imgUrl = new URL(`../assets/items/${name}.png`, import.meta.url).href;
+    const imgUrl = new URL(`../../assets/items/${name}.png`, import.meta.url).href;
     return imgUrl;
   };
 
