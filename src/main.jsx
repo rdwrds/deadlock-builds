@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomePage, Landing } from "./pages";
+import { BuildInfo, HomePage, Landing } from "./pages";
 import BuildPage from "./pages/BuildPage";
 
 const Main = () => {
@@ -16,7 +16,11 @@ const Main = () => {
         },
         {
           path: "/new-build",
-          element: <BuildPage/>
+          element: <BuildPage/>,
+          children: [{
+            path:"build-info",
+            element: <BuildInfo/>
+          }]
         }
       ]
     },
