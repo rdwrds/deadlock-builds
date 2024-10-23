@@ -77,7 +77,6 @@
     margin: 0 auto;
     text-align: center;
     text-overflow: ellipsis;
-    font-family: serif;
     font-weight: 800;
     text-shadow: 0px 0px 8px black, 0px 0px 8px black, 0px 0px 8px black;
     color: var(--tan-background);

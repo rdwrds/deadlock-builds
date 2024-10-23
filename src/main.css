@@ -47,13 +47,14 @@
 
 @font-face {
   font-family: "Forevs";
-  src: url("../assets/fonts/ForevsVariable-Italic.woff2") format("woff2");
+  src: url("./assets/fonts/ForevsVariable-Italic.woff2") format("woff2");
 }
 
 body {
   margin: 0px;
   background-color: rgba(0, 0, 0, 0.7);
-  font-family: "Forevs Demo", system-ui;
+  font-family: "Forevs", system-ui;
+  background-image: url("./assets/background.png"); 
 }
 
 div {
@@ -65,44 +66,6 @@ div {
   border-radius: 0;
   box-shadow: none;
 }
-
-.header {
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.nav-link {
-  width: 10%;
-  margin: 0 auto;
-  padding: 1%;
-  background-color: var(--tan-background);
-  text-align: center;
-  border-radius: 5%;
-  box-shadow: 1px 1px 5px rgba(0,0,0,.7);
-  transition: opacity .25s;
-}
-
-.nav-link:hover {
-  opacity: 0.7;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
