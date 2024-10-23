@@ -10,7 +10,7 @@ const Outer = () => {
 
   const getImgUrl = (name) => {
     let ext = ".png"; // can be anything
-    const imgUrl = new URL(`../assets/champs/${name}_card.png`, import.meta.url)
+    const imgUrl = new URL(`../../assets/champs/${name}_card.png`, import.meta.url)
       .href;
     return imgUrl;
   };
