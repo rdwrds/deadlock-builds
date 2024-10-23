@@ -34,7 +34,7 @@
 .weapon-slots,
 .spirit-slots,
 .vitality-slots,
-.flex-slots,
+.flex-slots
 {
   position: relative;
   background-color: var(--grey-background);
