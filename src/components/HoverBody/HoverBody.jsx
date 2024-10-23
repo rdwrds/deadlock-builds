@@ -27,7 +27,7 @@ const HoverBody = ({ obj }) => {
 
   return (
     <div className="hide" style={getCurrentStyle(currentTab)}>
-      <h3 className="display-name">{displayName}</h3>
+      <h2 className="display-name">{displayName}</h2>
       <div className="cost-container">
         <img className="cost-souls-icon" src={souls_icon}></img>
         <h3 className="cost-text">{Cost}</h3>
