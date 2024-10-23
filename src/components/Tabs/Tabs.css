@@ -11,9 +11,12 @@
     margin-right: 0.75%;
     border-radius: 2.5%;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-transform: capitalize;
+    font-family: "Forevs";
+    font-weight: 700;
+    transition: background-color .25s;
   }
   
   .tabs button:hover {
     cursor: pointer;
-    filter: brightness(75%);
   }
