@@ -4,6 +4,7 @@ import {ActiveSlots, Inventory, Outer} from "../components";
 import { TabContext } from "../components/TabContext";
 import { createGlobalStyle } from "styled-components";
 import { colors, getCurrentStyle } from "../Colors";
+import { Outlet } from "react-router-dom";
 
 const BuildPage = () => {
   const inventory = {
@@ -34,6 +35,7 @@ const BuildPage = () => {
         <Inventory type="flex" />
         <ActiveSlots />
       </div>
+      <Outlet/>
     </TabContext.Provider>
   );
 };
