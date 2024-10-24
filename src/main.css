@@ -6,6 +6,20 @@
   --souls-color: #aafde2;
 
   /* tinted colors */
+  --base-blue-100: #dff3fc;
+  --base-blue-200: #bfe7f9;
+  --base-blue-300: #9edbf5;
+  --base-blue-400: #7ecff2;
+  /* base */
+  --base-blue-500: #5ec3ef;
+  /* shaded colors */
+  --base-blue-600: #4b9cbf;
+  --base-blue-700: #38758f;
+  --base-blue-800: #264e60;
+  --base-blue-900: #132730;
+
+
+  /* tinted colors */
   --weapon-100: #f9ebd5;
   --weapon-200: #f3d7ac;
   --weapon-300: #ecc382;
@@ -58,7 +72,7 @@ body {
 }
 
 div {
-  border-radius: 2.5%;
+  border-radius: 2px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
