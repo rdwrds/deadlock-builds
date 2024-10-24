@@ -1,0 +1,5 @@
+.build-info-dialog {
+    width: 90%;
+    background-color: var(--tan-background);
+    border: none;
+}

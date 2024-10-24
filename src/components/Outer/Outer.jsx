@@ -4,6 +4,7 @@ import {Items, Tabs, Champs, TabContext} from "../../components";
 //import { TabContext } from "../TabContext";
 import champ_placeholder from "../../assets/champs/champ_placeholder.png"
 import './Outer.css'
+import { NavLink } from "react-router-dom";
 
 const Outer = () => {
   const { currentBuild } = useContext(TabContext);
@@ -32,7 +33,9 @@ const Outer = () => {
             <h4 className="champ-label">{currentBuild["champ"].toUpperCase()}</h4>
           </div>
           <div className="build-stats">
-            
+            <NavLink to='/new-build/build-info' >
+              Build Info
+            </NavLink>
             <p>build cost</p>
           </div>
         </div>
