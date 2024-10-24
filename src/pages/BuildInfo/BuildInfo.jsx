@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import 'BuildInfo.css'
+import './BuildInfo.css'
 
 const BuildInfo = () => {
   const dialogRef = useRef(null);
