@@ -28,7 +28,12 @@ const BuildInfo = () => {
       onClose={onClose}
       style={{}}
     >
-      BuildInfo
+      <div className="title-bar">
+        <h4 className="build-title">Build Title</h4>
+      </div>
+      <div className="build-info-body">
+        body
+      </div>
     </dialog>
   );
 };
