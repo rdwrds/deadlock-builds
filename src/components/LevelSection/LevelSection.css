@@ -1,0 +1,28 @@
+.level-section {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  margin: 2.5% 0;
+  background-color: var(--build-500);
+  height: 1fr;
+  padding: 5%;
+}
+
+.ability-icons {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 20%;
+  margin: auto;
+  height: 80%;
+  background: var(--build-600);
+  border-radius: 40px;
+}
+
+.ability-icons > img {
+  height: 24px;
+  margin: auto;
+}
+
+.level-order {
+  background: red;
+  margin: auto 0px;
+}

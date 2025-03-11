@@ -1,0 +1,17 @@
+.title-form {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 5px;
+}
+
+.category-title {
+    display: block;
+    width: 80%;
+    background: var(--grey-background-600);
+    box-shadow: none;
+    outline: none;
+    border: none;
+    color: grey;
+    font-weight: 700;
+}

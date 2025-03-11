@@ -1,0 +1,15 @@
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--grey-background-600);
+    border: none;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}

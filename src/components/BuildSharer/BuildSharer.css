@@ -1,0 +1,16 @@
+.build-token {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin: 2% 0;
+  padding: 0;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+}
+
+.sharer-container {
+  padding: 2%;
+  position: absolute;
+  width: 92%;
+  bottom: 2%;
+}

@@ -1,0 +1,23 @@
+.build-subsection {
+  box-shadow: none;
+  outline: solid 1px grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: start;
+  //grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  //grid-template-rows: 100px 100px;
+  column-gap: 0.5%;
+  padding: 0 0.5%;
+  padding-top: 25px;
+  row-gap: 0.5%;
+  //width: fit-content;
+}
+
+.build-subsection > .item {
+  width: 85px;
+  min-width: 85px;
+  height: 85px;
+  max-height: 85px;
+  padding: 0;
+  flex: 85px 1 85px;
+}

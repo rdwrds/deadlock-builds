@@ -1,0 +1,59 @@
+.banner-container {
+  /*to center img*/
+  text-align: center;
+  display: grid;
+  grid-template-columns: 75% 1fr;
+  justify-items: center;
+  margin: 2.5% auto;
+  height: 80vh;
+  box-shadow: none;
+}
+
+.name-logo {
+  width: 40%;
+  margin: 2% auto;
+  filter: drop-shadow(0px 10px 5px #000);
+}
+
+.img-banner {
+  max-height: 90%;
+  margin: auto;
+  filter: drop-shadow(4px 4px 4px #000);
+  position: absolute;
+  right: 15%;
+  top: 15%;
+  backdrop-filter: blur(2px);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.banner {
+  max-width: 90%;
+  box-shadow: none;
+  padding: 5% 0;
+  height: 70%;
+  margin: auto;
+}
+
+.abrams-banner {
+  padding: 0;
+}
+
+.welcome-label {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  color: var(--text-background);
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: 4px 4px 4px #000;
+  margin-bottom: 5%;
+  backdrop-filter: blur(1px);
+}
+
+.bio {
+  font-size: 1.5rem;
+  color: var(--vitality-400);
+  backdrop-filter: blur(2px);
+}
