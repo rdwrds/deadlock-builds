@@ -1,3 +1,4 @@
+//this violates DRY a tidbit but ill fix it later
 export const colors = {
   textBackground: "#f0e1cb",
   defaultBackground: "#28271e",
@@ -13,10 +14,16 @@ export const colors = {
   vitality500: "#84b430",
   vitality600: "#6a9026",
   vitality700: "#4f6c1d",
+  build400: "#7ecff2",
+  build500: "#5ec3ef",
+  build600: "#4b9cbf",
 };
 
 export const getCurrentStyle = (currentTab, shade) => {
   switch (currentTab) {
+    case "build":
+      return { backgroundColor: colors[`build${shade || 500}`] };
+      break;
     case "weapon":
       return { backgroundColor: colors[`weapon${shade || 500}`] };
       break;

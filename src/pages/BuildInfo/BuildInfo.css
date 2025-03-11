@@ -1,12 +1,64 @@
 .build-info-dialog {
   display: grid;
-  grid-template-rows: 12% 1fr;
-  height: 60%;
-  width: 90%;
+  grid-template-columns: 25% 1fr;
+  height: 80%;
+  width: 80%;
   padding: 0;
+  overflow: hidden;
   background-color: var(--grey-background);
   border: none;
   border-radius: 10px 10px 0px 0px;
+}
+
+.left-section {
+  display: grid;
+  grid-template-rows: 74% 25%;
+  max-height: 100%;
+  gap: 1%;
+  padding: 2%;
+  overflow-y: none;
+}
+
+.description-body {
+  position: relative;
+  background-color: var(--build-500);
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
+  padding: 2%;
+  color: white;
+  margin: auto 0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+.description-build-title {
+  margin: auto 0;
+  letter-spacing: 0.5px;
+  font-size: 2rem;
+  text-wrap: break-word;
+  word-break: break-all;
+}
+
+.save-button {
+  margin-bottom: 1%;
+  background-color: var(--tan-background);
+  outline: none;
+  border: none;
+  font-family: "Forevs";
+  font-size: 1.5em;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 1% 5%;
+  border-radius: 20px;
+}
+
+
+.body-div {
+    display: grid;
+    grid-template-rows: 15% 85%;
+    max-height: 100%;
 }
 
 .build-info-dialog:focus {
@@ -15,20 +67,94 @@
 
 .title-bar {
   display: flex;
-  padding: 0 1%;
-  background-color: var(--base-blue-500);
+  padding: 3% 1%;
+  background-color: var(--build-500);
   box-shadow: none;
+  max-height: 100%;
 }
 
 .build-title {
+  width: 100%;
   margin: auto 0;
   color: white;
-  text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
   font-size: 1.5rem;
-  letter-spacing: .5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  background: none;
+  font-family: "Forevs";
+}
+
+.build-title:focus {
+  background:rgba(0,0,0,0.2)
+}
+
+
+.build-title::placeholder {
+  color: rgb(210,210,210);
+}
+
+.build-title:focus {
+  outline: none;
+}
+
+.description-form {
+}
+
+.description-input {
+  width: 98%;
+  background: none;
+  border: solid 1px rgba(0,0,0,0.4);
+  resize: none;
+  overflow-y: auto;
+  overflow-x: none;
+  font-family: "Forevs";
+  font-size: 18px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.description-input:focus {
+  //border: none;
+  outline: none;
 }
 
 .build-info-body {
   display: grid;
-  padding: 2%;
+  grid-template-rows: 20% 20% 20% 20%; */
+  //padding: 0.5%;
+  overflow: hidden;
+}
+
+.build-layout {
+  height: 100%;
+  box-shadow: none;
+}
+
+.info-body-row {
+  display: grid;
+  column-gap: 1%;
+  row-gap: 2%;
+  padding: 1%;
+}
+
+.category-button {
+  margin: auto;
+  margin-right: 0;
+  background-color: var(--tan-background);
+  box-shadow: none;
+  border: none;
+  padding: 1%;
+  border-radius: 20px;
+  font-weight: 700;
+  color: white;
+  font-family: "Forevs";
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  transition: color 0.25s;
+}
+
+.category-button:hover {
+  cursor: pointer;
+  color: var(--souls-color);
 }

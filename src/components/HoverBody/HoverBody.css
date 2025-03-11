@@ -25,7 +25,6 @@
     box-shadow: none;
     //border-radius: 0;
     padding-bottom: 5%;
-    opacity: 1;
     font-family: system-ui;
   }
 
@@ -41,6 +40,11 @@
   .hide-body > section > p {
     margin: 0;
     font-size: 0.75vw;
+    opacity: 1;
+  }
+
+  .activation-section {
+    margin-bottom: 5%;
   }
 
   .activation-text {

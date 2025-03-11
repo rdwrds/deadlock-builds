@@ -5,19 +5,24 @@
   --grey-background: #525659;
   --souls-color: #aafde2;
 
-  /* tinted colors */
-  --base-blue-100: #dff3fc;
-  --base-blue-200: #bfe7f9;
-  --base-blue-300: #9edbf5;
-  --base-blue-400: #7ecff2;
+  --grey-background-400: #75787a;
   /* base */
-  --base-blue-500: #5ec3ef;
+  --grey-background-500: #525659;
   /* shaded colors */
-  --base-blue-600: #4b9cbf;
-  --base-blue-700: #38758f;
-  --base-blue-800: #264e60;
-  --base-blue-900: #132730;
+  --grey-background-600: #424547;
 
+  /* tinted colors */
+  --build-100: #dff3fc;
+  --build-200: #bfe7f9;
+  --build-300: #9edbf5;
+  --build-400: #7ecff2;
+  /* base */
+  --build-500: #5ec3ef;
+  /* shaded colors */
+  --build-600: #4b9cbf;
+  --build-700: #38758f;
+  --build-800: #264e60;
+  --build-900: #132730;
 
   /* tinted colors */
   --weapon-100: #f9ebd5;
@@ -68,7 +73,7 @@ body {
   margin: 0px;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: "Forevs", system-ui;
-  background-image: url("./assets/background.png"); 
+  background-image: url("./assets/background.png");
 }
 
 div {
@@ -81,5 +86,7 @@ div {
   box-shadow: none;
 }
 
-
-
+button:focus {
+  transition: opacity 0.2s;
+  opacity: 0.8;
+}

@@ -4,11 +4,10 @@ import TabButton from "./TabButton";
 import "./Tabs.css";
 const Tabs = () => {
   const { currentTab } = useContext(TabContext);
- 
-  console.log(currentTab);
 
   return (
     <div className="tabs">
+      <TabButton type="build"/>
       <TabButton type="weapon"/>
       <TabButton type="vitality"/>
       <TabButton type="spirit"/>

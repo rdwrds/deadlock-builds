@@ -1,83 +1,74 @@
 .champs-wrapper {
-    margin-left: 1%;
-    width: fit-content;
-  }
-  
-  .build-info {
-    display: flex;
-    background-color: var(--grey-background);
-    margin-bottom: 2%;
-  }
-  
-  .build-stats {
-    width: 50%;
-    margin: 2% auto;
-    margin-left: 5%;
-    background-color: var(--grey-background);
-    box-shadow: inset 2px 2px 5px black;
-    padding: 2%;
-  }
-  
-  .current-champ {
-    position: relative;
-    width: 20%;
-    margin: 2% auto;
-    margin-right: 5%;
-    height: 18%;
-    background-color: var(--tan-background);
-    box-shadow: 0px 0px 5px black;
-  }
-  
-  .current-champ > img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: 2%;
-  }
-  
-  .champs {
-    background-color: var(--grey-background);
-    margin: auto;
-    padding: 10px;
-    height: 50vh;
-    width: 30vmax;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 10px;
-    overflow: scroll;
-    box-shadow: inset 0px 0px 5px black;
-    z-index: 1;
-  }
-  
-  .champs::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .champ {
-    position: relative;
-    background-color: var(--tan-background);
-    transition: opacity 0.25s;
-  }
-  
-  .champ:hover {
-    cursor: pointer;
-  }
-  
-  .champ > img {
-    width: 100%;
-    height: 100%;
-    border-radius: 1%;
-  }
-  
-  .champ-label {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    text-overflow: ellipsis;
-    font-weight: 800;
-    text-shadow: 0px 0px 8px black, 0px 0px 8px black, 0px 0px 8px black;
-    color: var(--tan-background);
-  }
+  margin-left: 1%;
+  width: 40%;
+}
+
+.build-info {
+  display: flex;
+  align-items: center;
+  background-color: var(--grey-background);
+  margin-bottom: 2%;
+}
+
+.current-champ {
+  position: relative;
+  width: 20%;
+  margin: 2% auto;
+  background-color: var(--tan-background);
+  box-shadow: 0px 0px 5px black;
+}
+
+.current-champ > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2%;
+}
+
+.champs {
+  background-color: var(--grey-background);
+  margin: auto;
+  padding: 10px;
+  height: 50vh;
+  width: 30vmax;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  overflow: scroll;
+  box-shadow: inset 0px 0px 5px black;
+  z-index: 1;
+}
+
+.champs::-webkit-scrollbar {
+  display: none;
+}
+
+.champ {
+  position: relative;
+  background-color: var(--tan-background);
+  transition: opacity 0.25s;
+}
+
+.champ:hover {
+  cursor: pointer;
+}
+
+.champ > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1%;
+}
+
+.champ-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 1.25vw;
+  font-weight: 800;
+  text-shadow: 0px 0px 8px black, 0px 0px 8px black, 0px 0px 8px black;
+  color: var(--tan-background);
+}

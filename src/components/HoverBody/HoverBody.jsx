@@ -37,7 +37,6 @@ const HoverBody = ({ obj }) => {
           <p className="activation-text">{activationText}</p>
           {Cooldown != 0 && <div className="cooldown-section">{Cooldown}s</div>}
         </div>
-        <p className="description-text">{Description}</p>
         <section className="base-stats">
           {Object.keys(obj).map((key) => {
             if (formatted_stats[key]) {
@@ -51,6 +50,7 @@ const HoverBody = ({ obj }) => {
             }
           })}
         </section>
+        <p className="description-text">{Description}</p>
         {Conditionals && (
           <div
             className="conditional-stats"

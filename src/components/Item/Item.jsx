@@ -1,14 +1,16 @@
-import { useContext, useState, useEffect, act } from "react";
-import { TabContext } from "../../components";
+import { useContext, useState, useEffect } from "react";
+import { TabContext, CategoryContext, HoverBody } from "../../components";
 import { colors } from "../../Colors";
-import {HoverBody} from "../../components";
-import './Item.css'
+import "./Item.css";
 
 const Item = (obj) => {
-  const { name, Activation, Slot } = obj;
-
   const { currentBuild, setCurrentBuild, currentTab, getCurrentStyle } =
     useContext(TabContext);
+  const { currentCategory } = useContext(CategoryContext);
+
+  const { name, Activation, Slot } = obj;
+  const [hover, setHover] = useState(false);
+  const [parentCat, setParentCat] = useState(currentCategory);
 
   let activeItems = [];
 
@@ -19,7 +21,8 @@ const Item = (obj) => {
   const displayName = name.replace(/_/g, " ");
 
   const getImgUrl = () => {
-    const imgUrl = new URL(`../../assets/items/${name}.png`, import.meta.url).href;
+    const imgUrl = new URL(`../../assets/items/${name}.png`, import.meta.url)
+      .href;
     return imgUrl;
   };
 
@@ -52,12 +55,26 @@ const Item = (obj) => {
     (element) => element["name"] === name
   );
 
+  //12/5: should prolly move this logic to the build info page.
+  //weird to have this logic disconnected like this
   const alterBuild = () => {
     //NOTE: this will not work for if items are components.
     //need extra logic to see if components of items are in a slot already zzz
 
     //see if the item is in a normal/flex slot already
     console.log(currentBuild);
+
+    if (currentCategory) {
+      setParentCat(currentCategory);
+      console.log(parentCat);
+
+      //this shouldnt work because we're changing the state without
+      //the hook..
+      currentCategory.items = [...currentCategory.items, obj];
+      //short circuit so we dont add the items to the build- just add them
+      //to the category
+      return;
+    }
 
     if (foundInSlot) {
       setCurrentBuild({
@@ -102,22 +119,59 @@ const Item = (obj) => {
     }
   };
 
-   //this is only like this because getCurrentStyle() returns an object,
+  //this is only like this because getCurrentStyle() returns an object,
   //and inline styles can only be one object. so rather than revamp
   //the whole project its easier to just do this short workaround
 
-  let itemStyle = getCurrentStyle(currentTab);
-  itemStyle = {
-    ...itemStyle,
-    opacity: foundInSlot || foundInFlex ? "0.3" : "1",
-  };
-  
-  return (
-    <div className="item" style={itemStyle} onClick={alterBuild}>
-      <img src={getImgUrl()} alt="" />
-      <p>{displayName}</p>
-      <HoverBody obj={obj}/>
-    </div>
-  );
+  if (!hover) {
+    let itemStyle = getCurrentStyle(Slot);
+    console.log(parentCat);
+
+    itemStyle = {
+      ...itemStyle,
+      opacity: foundInSlot || foundInFlex || parentCat ? "0.3" : "1",
+    };
+
+    return (
+      <div
+        className="item"
+        style={itemStyle}
+        onClick={alterBuild}
+        onMouseEnter={() => {
+          setHover(true);
+        }}
+        onMouseLeave={() => {
+          setHover(false);
+        }}
+      >
+        <img src={getImgUrl()} alt="" loading="lazy" />
+        <p>{displayName}</p>
+        <HoverBody obj={obj} />
+      </div>
+    );
+  } else {
+    let itemStyle = {
+      backgroundColor: currentCategory ? "var(--build-600)" : "rgba(0,0,0,.7)",
+    };
+
+    console.log(parentCat);
+
+    return (
+      <div
+        className="item"
+        style={itemStyle}
+        onClick={alterBuild}
+        onMouseEnter={() => {
+          setHover(true);
+        }}
+        onMouseLeave={() => {
+          setHover(false);
+        }}
+      >
+        {currentCategory ? <h4>Add to Category</h4> : <h4>Add to Build</h4>}
+        <HoverBody obj={obj} />
+      </div>
+    );
+  }
 };
 export default Item;

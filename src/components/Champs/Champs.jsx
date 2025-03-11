@@ -1,6 +1,6 @@
-import { TabContext }  from "../../components";
+import { TabContext } from "../../components";
 import { useContext } from "react";
-import "./Champs.css"
+import "./Champs.css";
 
 const Champs = () => {
   const champs_names = [
@@ -32,30 +32,38 @@ const Champs = () => {
 
   const getImgUrl = (name) => {
     let ext = ".png"; // can be anything
-    const imgUrl = new URL(`../../assets/champs/${name}_card.png`, import.meta.url)
-      .href;
+    const imgUrl = new URL(
+      `../../assets/champs/${name}_card.png`,
+      import.meta.url
+    ).href;
     return imgUrl;
   };
 
   const setCurrentChamp = (name) => {
-    if (currentBuild["champ"] === name) {
+    if (currentBuild["build"]["champ"] === name) {
       setCurrentBuild({
         ...currentBuild,
-        champ: "",
+        build: {
+          ...currentBuild.build,
+          champ: "",
+        },
       });
       return;
     }
 
     setCurrentBuild({
       ...currentBuild,
-      champ: name,
+      build: {
+        ...currentBuild.build,
+        champ: name,
+      },
     });
   };
 
   return (
     <div className="champs">
       {champs_names.map((name) => {
-        const op = currentBuild["champ"] === name ? 0.3 : 1;
+        const op = currentBuild["build"]["champ"] === name ? 0.3 : 1;
         return (
           <div
             className="champ"
@@ -65,7 +73,7 @@ const Champs = () => {
             style={{ opacity: op }}
             key={name}
           >
-            <img src={getImgUrl(name)} alt={name} />
+            <img src={getImgUrl(name)} alt={name} loading="lazy" />
             <h3 className="champ-label">
               {name.replaceAll("_", " ").toUpperCase()}
             </h3>

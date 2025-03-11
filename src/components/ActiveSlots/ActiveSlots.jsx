@@ -25,8 +25,6 @@ const ActiveSlots = () => {
     "III",
     "IV"
   ]
-
-  console.log(getActiveItems())
   const currentItems = getActiveItems();
 
   const getImgUrl = (name) => {

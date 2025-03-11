@@ -1,31 +1,42 @@
 .item {
-    position: relative;
-    background-color: var(--text-background);
-    min-width: 0;
-    transition: opacity .25s;
-    padding: 2% 0;
-  }
-  
-  .item:hover {
-    cursor: pointer;
-  }
-  
-  .item > img {
-    display: block;
-    margin: auto;
-    height: 60%;
-    filter: brightness(15%);
-  }
-  
-  .item > p {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    bottom: 0;
-    width: 100%;
-    height: 40%;
-    font-weight: 700; 
-    background: var(--text-background);
-    text-align: center;
-    font-size: 0.60vw;
-  }
+  position: relative;
+  background-color: var(--text-background);
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.25s;
+  transition: background-color 0.2s;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item > img {
+  display: block;
+  margin: auto;
+  height: 60%;
+  filter: brightness(15%);
+}
+
+.item > p {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  font-weight: 700;
+  background: var(--text-background);
+  text-align: center;
+  font-size: 0.6vw;
+}
+
+.item > h4 {
+  height: auto;
+  text-align: center;
+  color: var(--build-100);
+  margin: 20% 0;
+  transition: opacity 1s;
+  font-size: 0.95em;
+}
